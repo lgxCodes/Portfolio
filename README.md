@@ -1,6 +1,6 @@
 # Portfolio — Lucas Xavier
 
-A personal portfolio website showcasing my projects and skills as a front-end developer.
+A personal portfolio website showcasing my projects and skills as a front-end developer. Created using React, Typescript, and Tailwind.
 
 **Live:** [lgxcodes.github.io/Portfolio](https://lgxcodes.github.io/Portfolio/)
 
