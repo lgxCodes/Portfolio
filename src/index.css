@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-400: oklch(0.75 0.18 270);
+  --color-accent-500: oklch(0.65 0.22 270);
+  --color-accent-600: oklch(0.55 0.24 270);
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.75 0.2 280), oklch(0.78 0.18 220));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Nav link hover underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(135deg, oklch(0.75 0.2 280), oklch(0.78 0.18 220));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.card-glow {
+  transition: box-shadow 0.3s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 0 20px oklch(0.65 0.22 270 / 0.3), 0 0 40px oklch(0.65 0.22 270 / 0.1);
+}
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero staggered entrance */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease forwards;
+}
+
+/* Hero scroll indicator bounce */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out 3;
+}
+
+/* Project carousel card layout */
+.slider-card {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 90%;
+  max-width: 520px;
+  height: 100%;
+  margin-left: -260px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+@media (max-width: 768px) {
+  .slider-card {
+    width: 85%;
+    max-width: 360px;
+    margin-left: -180px;
+  }
+}
+
+/* Accessibility: respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal,
+  .animate-fade-in-up,
+  .animate-bounce-slow,
+  .slider-card,
+  .nav-link::after,
+  .card-glow {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
