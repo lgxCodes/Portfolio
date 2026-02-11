@@ -20,7 +20,6 @@ function Projects() {
     return () => clearInterval(id)
   }, [paused, next])
 
-  // Enable keyboard nav only when section is visible
   useEffect(() => {
     const el = sectionRef.current
     if (!el) return
@@ -44,7 +43,6 @@ function Projects() {
 
   function getOffset(index: number) {
     let diff = index - active
-    // Loop the carousel seamlessly
     if (diff > total / 2) diff -= total
     if (diff < -total / 2) diff += total
     return diff

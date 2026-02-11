@@ -1,6 +1,28 @@
 import type { Project } from '../types/index.ts'
 
 export const projects: Project[] = [
+    {
+    id: 'portfolio',
+    title: 'Portfolio Website',
+    description:
+      'A dark-themed personal portfolio with a keyboard-navigable project carousel, scroll-reveal animations, a frosted-glass navbar with mobile hamburger menu, and a contact section — all fully responsive.',
+    image: 'projects/Portfolio.png',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+
+    liveUrl: 'https://lgxcodes.github.io/Portfolio/',
+    githubUrl: 'https://github.com/lgxCodes/Portfolio',
+  },
+    {
+    id: 'Task-Manager',
+    title: 'Task Manager',
+    description:
+      'A Kanban-style task management app with drag-and-drop functionality, dynamic task creation, search functionality, and a responsive design that adapts seamlessly to different screen sizes.',
+    image: 'projects/Task Manager.png',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
+
+    liveUrl: 'https://lgxcodes.github.io/Task-Manager/',
+    githubUrl: 'https://github.com/lgxCodes/Task-Manager',
+  },
   {
     id: 'Guitar-Ecommerce',
     title: 'Guitar E-commerce Website',
@@ -40,16 +62,5 @@ export const projects: Project[] = [
     techStack: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://lgxcodes.github.io/Valentines-Day/',
     githubUrl: 'https://github.com/lgxCodes/Valentines-Day',
-  },
-  {
-    id: 'portfolio',
-    title: 'Portfolio Website',
-    description:
-      'A dark-themed personal portfolio with a keyboard-navigable project carousel, scroll-reveal animations, a frosted-glass navbar with mobile hamburger menu, and a contact section — all fully responsive.',
-    image: 'projects/Portfolio.png',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS'],
-
-    liveUrl: 'https://lgxcodes.github.io/Portfolio/',
-    githubUrl: 'https://github.com/lgxCodes/Portfolio',
   },
 ]
